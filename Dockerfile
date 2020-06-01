@@ -9,7 +9,10 @@ ARG URL=https://example.org/rails/action_mailbox/relay/inbound_emails
 ARG INGRESS_PASSWORD=12345abcdef
 
 # some env config
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=C.UTF-8 \
+    LANGUAGE=en_US:en \
+    LC_ALL=C.UTF-8
 
 # add local user for postfix
 RUN useradd -m -s /bin/bash deploy
